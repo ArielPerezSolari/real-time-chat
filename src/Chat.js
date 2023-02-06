@@ -1,16 +1,23 @@
 import MoreVert from '@mui/icons-material/MoreVert'
 import SearchOutlined from '@mui/icons-material/SearchOutlined'
 import AttachFileIcon from '@mui/icons-material/AttachFile';
+import InsertEmoticonOutlinedIcon from '@mui/icons-material/InsertEmoticonOutlined';
+import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import { Avatar, IconButton } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import './Chat.css'
 
 function Chat() {
   const [seed, setSeed] = useState("")
+  const [input, setInput] = useState("")
 
     useEffect(() => {
 			setSeed(Math.floor(Math.random() * 5000))
     }, [])
+
+    const sendMessage = (e) => {
+      e.preventDefault()
+    }
 
   return (
 
@@ -44,7 +51,20 @@ function Chat() {
           
         </div>
         <div className='chat__footer'>
-        
+          <InsertEmoticonOutlinedIcon />
+          <form>
+            <input
+              value={input} 
+              onChange={ e => setInput(e.target.value)}
+              type='text'
+              placeholder='Type a message'
+            />
+            <button
+            onClick={sendMessage}
+            type='submit'
+            >Send a message</button>
+          </form>
+          <KeyboardVoiceIcon />
         </div>  
     </div>
   )
