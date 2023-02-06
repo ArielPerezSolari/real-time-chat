@@ -1,15 +1,17 @@
 .chat {
     flex: 0.65;
+    display: flex;
+    flex-direction: column;
 }
 
-.chat__header{
+.chat__header {
     padding: 20px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid lightgray;
 }
 
-.chat__headerInfo{
+.chat__headerInfo {
     flex: 1;
     padding-left: 20px;
 }
@@ -27,4 +29,22 @@
     display: flex;
     justify-content: space-between;
     min-width: 100px;
+}
+
+.chat__body {
+    flex: 1;
+    background-image: url("https://theabbie.github.io/blog/assets/official-whatsapp-background-image.jpg");
+    background-repeat: repeat;
+    background-position: center;
+    padding: 30px;
+    overflow: scroll;
+    opacity: 0.3;
+}
+
+.chat__message {
+    position: relative;
+    font-size: 15px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
 }
