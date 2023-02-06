@@ -33,18 +33,39 @@
 
 .chat__body {
     flex: 1;
-    background-image: url("https://theabbie.github.io/blog/assets/official-whatsapp-background-image.jpg");
+    background-image: url("https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg");
     background-repeat: repeat;
     background-position: center;
     padding: 30px;
     overflow: scroll;
-    opacity: 0.3;
 }
 
 .chat__message {
     position: relative;
     font-size: 15px;
     padding: 10px;
-    background-color: #ffffff;
+    background-color: white;
     border-radius: 10px;
+    color: black;
+    width: fit-content;
+    margin-bottom: 30px;
+    border: 1px solid lightgrey;
 }
+
+.chat__receiver {
+    margin-left: auto;
+    background-color: #dcf8c6;
+}
+
+.chat__name{
+    position: absolute;
+    top: -20px;
+    font-weight: 700;
+    font-size: small;
+}
+
+.chat__timestamp{
+    margin-left: 10px;
+    font-size: xx-small;
+}
+
