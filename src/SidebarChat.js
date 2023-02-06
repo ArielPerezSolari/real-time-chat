@@ -1,9 +1,10 @@
 import { Avatar } from '@mui/material'
 import React, { useEffect, useState } from 'react'
+import db from './firebase'
 import './SidebarChat.css'
 
 
-function SidebarChat({addNewChat}) {
+function SidebarChat({id, name , addNewChat}) {
     const [seed, setSeed] = useState("")
 
     useEffect(() => {
@@ -14,7 +15,9 @@ function SidebarChat({addNewChat}) {
 			const roomName = prompt("Please enter name for chat")
 
 			if (roomName) {
-				// do some clever stuff in db..
+				db.collection('rooms').add({
+					name: roomName,
+				})
 			}
 		}
 
@@ -22,7 +25,7 @@ function SidebarChat({addNewChat}) {
     <div className='sidebarChat'>
       <Avatar src={`https://api.dicebear.com/5.x/miniavs/svg?seed=${seed}`} />
       <div className='sidebarChat__info'>
-        <h2>Room name</h2>
+        <h2>{name}</h2>
         <p>Last message...</p>
       </div>
     </div>
